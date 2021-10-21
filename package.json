@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "nuxt3": "latest",
+    "postcss-custom-properties": "^12.0.0",
+    "postcss-nesting": "^8.0.1",
+    "tailwindcss": "^3.0.0-alpha.1"
+  },
+  "dependencies": {
+    "motion": "^10.3.2"
+  }
+}

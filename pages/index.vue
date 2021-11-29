@@ -1,9 +1,16 @@
 <template>
   <main>
-    <input type="range" @input="handleAnimation">
-    {{range}}
-    <h1 animate="hero" class="bg-blue-500 text-blue-100 font-serif text-[64px]">
-      <span v-for="(letter, letterIndex) in hello" :key="letterIndex" class="opacity-0 inline-block empty:w-1 empty:bg-blue-400 empty:h-1">
+    <input
+      type="range"
+      @input="handleAnimation">
+    {{ range }}
+    <h1
+      animate="hero"
+      class="bg-blue-500 text-blue-100 font-serif text-[64px]">
+      <span
+        v-for="(letter, letterIndex) in hello"
+        :key="letterIndex"
+        class="opacity-0 inline-block empty:w-1 empty:bg-blue-400 empty:h-1">
         {{ letter }}
       </span>
     </h1>

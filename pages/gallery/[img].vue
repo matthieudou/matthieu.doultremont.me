@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello img {{$route.params.img}}
+    Hello img {{ $route.params.img }}
   </div>
 </template>
 

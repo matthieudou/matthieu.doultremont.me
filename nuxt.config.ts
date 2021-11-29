@@ -1,18 +1,14 @@
+import { isArray } from '@vue/shared'
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
-  css: ['~/assets/main.css'],
+  typescript: {
+    strict: true
+  },
 
-  build: {
-    transpile: [],
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          'postcss-nesting': {},
-          'postcss-custom-properties': {},
-          tailwindcss: {}
-        }
-      }
-    }
-  }
+  buildModules: [
+    ['nuxt-windicss', {
+      analyse: true
+    }]
+  ]
 })

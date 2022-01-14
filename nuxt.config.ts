@@ -1,4 +1,3 @@
-import { isArray } from '@vue/shared'
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({

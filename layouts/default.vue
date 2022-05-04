@@ -1,5 +1,7 @@
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen bg-white text-black dark:bg-black dark:text-white">
+    <BaseNavigation />
+
     <slot />
   </div>
 </template>

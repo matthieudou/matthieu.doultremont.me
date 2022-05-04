@@ -7,17 +7,22 @@
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "autoprefixer": "^10.4.2",
     "eslint": "^8.3.0",
     "eslint-plugin-vue": "^8.1.1",
-    "nuxt-windicss": "^2.0.12",
-    "nuxt3": "^3.0.0-27369360.33ebb01",
+    "nuxt3": "^3.0.0-27468803.23e7afb",
+    "tailwindcss": "^3.0.15",
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "@nuxtjs/sanity": "^1.1.1",
+    "@sanity/image-url": "^1.0.1",
     "@vueuse/core": "^7.1.2",
     "ipx": "^0.9.1",
-    "motion": "^10.3.2"
+    "motion": "^10.3.2",
+    "postcss-focus-visible": "^6.0.3"
   }
 }

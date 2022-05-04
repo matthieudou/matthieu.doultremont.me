@@ -5,9 +5,30 @@ export default defineNuxtConfig({
     strict: true
   },
 
-  buildModules: [
-    ['nuxt-windicss', {
-      analyse: true
-    }]
-  ]
+  css: [
+    '~/assets/css/main.css'
+  ],
+
+  modules: [
+    '@nuxtjs/sanity'
+  ],
+
+  sanity: {
+    projectId: 'mtvzztya',
+    dataset: 'production',
+    apiVersion: '2022-01-01',
+    useCdn: true
+  },
+
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          'postcss-focus-visible': {},
+          autoprefixer: {}
+        }
+      }
+    }
+  }
 })

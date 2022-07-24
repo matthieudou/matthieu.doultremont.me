@@ -1,11 +1,14 @@
 <template>
   <footer class="relative">
-    <div class="-z-10 asbolute absolute inset-y-0 right-0 h-full w-full md:w-1/2">
+    <div class="-z-10 absolute inset-y-0 right-0 h-full w-full md:w-1/2">
       <div class="hidden md:block z-10 absolute w-full h-full bg-gradient-to-r from-black via-black/30 to-black/0" />
       <div class="z-10 absolute w-full h-full bg-gradient-to-b from-black via-black/30 to-black/0" />
-      <img
-        class="w-full h-full object-cover"
-        v-bind="urlFor(data.footer_image, { height: 400, width: 800, flipHorizontal: true })">
+      <NuxtPicture
+        src="/images/profilePic.jpeg"
+        fit="cover"
+        sizes="sm:100vw md:50vw"
+        :img-attrs="{class: 'w-full h-full object-cover object-top'}"
+        :modifiers="{flop: true}" />
     </div>
     <UiContainer class="py-20 md:py-40 grid place-items-center">
       <h2 class="text-lg mb-2 text-white/60">
@@ -59,16 +62,6 @@
   const isSupported = ref(false)
   onMounted(() => { isSupported.value = Boolean(navigator && 'clipboard' in navigator) })
   const { copied, copy } = useClipboard()
-
-  const query = groq`
-    *[_id == "home_page"] {
-      footer_image
-    }[0]
-  `
-
-  const { data } = useSanityQuery(query)
-
-  const urlFor = useSanityUrlFor()
 </script>
 
 <style scoped>

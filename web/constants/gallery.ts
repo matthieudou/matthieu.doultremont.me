@@ -2,7 +2,7 @@ import { GalleryItem } from '~/types/models'
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
-    title: 'Yey',
+    title: 'Yep',
     dominantColor: '#011A24',
     location: 'Sardinia',
     aspectRatio: 4 / 5,

@@ -1,51 +1,48 @@
 <template>
-  <section class="py-16 md:py-32 dark:text-white">
-    <UiContainer class="grid md:grid-cols-2 gap-16 md:gap-32">
-      <div>
-        <UiTitle>
-          Photography
-        </UiTitle>
-        <UiTitle
-          :level="2"
-          class="mt-32">
-          Equipment
-        </UiTitle>
-      </div>
-      <div>
-        <div class="flex items-center justify-between">
-          <UiTitle :level="2">
-            Best shots
-          </UiTitle>
-          <NuxtLink
-            to="/gallery"
-            class="inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring rounded-lg px-2 py-1 hover:bg-black/10 transition">
-            See all
-            <IconChevronRight class="group-hover:translate-x-2 transition" />
-          </NuxtLink>
-        </div>
+  <UiContainer class="py-16 md:py-32">
+    <UiTitle class="md:text-center">
+      Photography
+    </UiTitle>
 
-        <SanityGallery
-          class="mt-16"
-          :columns="2"
-          :shots="data.best_shots" />
-      </div>
-    </UiContainer>
-  </section>
+    <UiImageGallery
+      class="mt-16"
+      :columns="numberOfColumns"
+      :items="displayedShots" />
+
+    <div
+      v-if="GALLERY_ITEMS.length > amountOfDisplayedItems"
+      class="flex items-center justify-center mt-12">
+      <button
+        class="rounded border border-white px-4 py-2 hover:bg-white/10 transition"
+        @click="handleDisplayMore">
+        Show more...
+      </button>
+    </div>
+  </UiContainer>
 </template>
 
 <script lang="ts" setup>
-  const { data } = useSanityQuery(groq`
-    *[_id == "home_page"] {
-      best_shots[]->{
-        _id,
-        title,
-        image {
-          asset,
-          "aspectRatio": asset->metadata.dimensions.aspectRatio,
-          "dominantColor": asset->metadata.palette.darkMuted.background
-        },
-        location
-      }
-    }[0]
-  `)
+  import { breakpointsTailwind } from '@vueuse/core'
+  import { GALLERY_ITEMS } from '@/constants'
+
+  const DISPLAYED_AMOUNT_STEP = 4
+  const amountOfDisplayedItems = ref(DISPLAYED_AMOUNT_STEP)
+
+  const handleDisplayMore = () => {
+    amountOfDisplayedItems.value += DISPLAYED_AMOUNT_STEP
+  }
+
+  const displayedShots = computed(() => {
+    return GALLERY_ITEMS.slice(0, amountOfDisplayedItems.value)
+  })
+
+  const { greater } = useBreakpoints(breakpointsTailwind)
+  const greaterThanLg = greater('lg')
+  const greaterThanMd = greater('md')
+  const numberOfColumns = computed(() => {
+    if (greaterThanLg.value) { return 4 }
+    if (greaterThanMd.value) { return 3 }
+    return 2
+  })
+
 </script>

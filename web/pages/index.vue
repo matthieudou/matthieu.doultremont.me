@@ -1,16 +1,12 @@
 <template>
   <main>
-    <UiContainer
-      as="section"
-      class="h-[400px]">
-      Hero
-    </UiContainer>
-
+    <IndexHero />
     <IndexSkills />
     <IndexExperience />
-    <IndexGallery />
+    <ClientOnly>
+      <IndexGallery />
+    </ClientOnly>
     <IndexFooter />
-    <!-- <LayoutFooter /> -->
   </main>
 </template>
 

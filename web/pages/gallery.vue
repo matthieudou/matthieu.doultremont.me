@@ -3,7 +3,7 @@
     <UiContainer class="py-16 md:py-32">
       <UiTitle
         as="h1"
-        class="dark:text-white">
+        class="text-center ">
         Gallery
       </UiTitle>
 
@@ -36,7 +36,6 @@
   const greaterThanLg = greater('lg')
   const greaterThanMd = greater('md')
   const numberOfColumns = computed(() => {
-    console.log('Runned')
     if (greaterThanLg.value) { return 4 }
     if (greaterThanMd.value) { return 3 }
     return 2

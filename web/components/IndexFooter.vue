@@ -56,7 +56,9 @@
     { icon: IconInstagram, name: 'Instagram', url: 'https://www.instagram.com/matthieudou' }
   ]
 
-  const { copied, isSupported, copy } = useClipboard()
+  const isSupported = ref(false)
+  onMounted(() => { isSupported.value = Boolean(navigator && 'clipboard' in navigator) })
+  const { copied, copy } = useClipboard()
 
   const query = groq`
     *[_id == "home_page"] {

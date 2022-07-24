@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "ROOT",
+			"path": "."
+		},
+		{
+			"name": "WEB",
+			"path": "web"
+		},
+		{
+			"name": "CMS",
+			"path": "cms"
+		}
+	],
+	"settings": {
+		"path-intellisense.mappings": {
+			"~": "${workspaceRoot}/web"
+		},
+		"eslint.workingDirectories": [
+			"web",
+      "cms"
+		],
+		"volar.codeLens.pugTools": false,
+		"volar.codeLens.scriptSetupTools": true
+	}
+}

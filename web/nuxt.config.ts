@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@nuxtjs/sanity'
+    '@nuxtjs/sanity',
+    '@nuxt/image-edge'
   ],
 
   buildModules: [

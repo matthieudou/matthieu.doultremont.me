@@ -2,9 +2,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './nuxt.config.ts'
-  ],
   theme: {
     extend: {
       aspectRatio: {

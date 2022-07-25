@@ -21,17 +21,11 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@nuxtjs/sanity',
+    '@vueuse/nuxt',
     '@nuxt/image-edge'
   ],
 
   buildModules: [
-    '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt'
-  ],
-
-  sanity: {
-    projectId: 'mtvzztya',
-    apiVersion: '2022-01-01'
-  }
+    '@nuxtjs/tailwindcss'
+  ]
 })

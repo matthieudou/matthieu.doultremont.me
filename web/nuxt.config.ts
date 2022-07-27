@@ -27,5 +27,9 @@ export default defineNuxtConfig({
 
   buildModules: [
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+
+  image: {
+    dir: process.env.NODE_ENV === 'production' ? './' : undefined
+  }
 })

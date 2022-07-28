@@ -3,7 +3,8 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   typescript: {
-    strict: true
+    strict: true,
+    shim: false
   },
 
   app: {
@@ -27,9 +28,5 @@ export default defineNuxtConfig({
 
   buildModules: [
     '@nuxtjs/tailwindcss'
-  ],
-
-  image: {
-    dir: process.env.NODE_ENV === 'production' ? './' : undefined
-  }
+  ]
 })

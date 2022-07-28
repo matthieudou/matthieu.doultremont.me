@@ -15,6 +15,7 @@
           tag="button"
           :initial="{opacity:0, scale:0.9}"
           :in-view="{opacity:1, scale:1}"
+          :in-view-options="{once: true}"
           :hover="{scale: 1.02}"
           class="focus:outline-none focus-visible:ring rounded-xl"
           @click="displayShot(item)"
@@ -23,8 +24,6 @@
             :src="item.url"
             sizes="sm:50vw md:33vw lg:25vw"
             :img-attrs="{class: 'rounded-xl', alt: item.title}" />
-            <!-- width="500"
-            height="500" -->
         </Motion>
       </div>
     </div>
